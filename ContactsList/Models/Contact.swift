@@ -5,7 +5,8 @@
 //  Created by Paul Makey on 16.12.23.
 //
 
-struct Contact: Equatable {
+struct Contact {
+    
     let name: String
     let surname: String
     let phone: String
@@ -17,10 +18,10 @@ struct Contact: Equatable {
         
         while contacts.count < 10 {
             
-            let name = dataStore.names.randomElement() ?? "No_name"
-            let surname = dataStore.surnames.randomElement() ?? "No_surname"
-            let email = dataStore.emails.randomElement() ?? "No_email"
-            let phone = dataStore.phoneNumbers.randomElement() ?? "No_phone"
+            let name = dataStore.names.randomElement() ?? ""
+            let surname = dataStore.surnames.randomElement() ?? ""
+            let phone = dataStore.phoneNumbers.randomElement() ?? ""
+            let email = dataStore.emails.randomElement() ?? ""
             
             let newContact = Contact(
                 name: name,
@@ -29,10 +30,22 @@ struct Contact: Equatable {
                 email: email
             )
             
-            if !contacts.contains(where: { $0 == newContact }) {
+            // Почему не работает корректно? =(
+            // Не могу понять...
+            if !contacts.contains(newContact) {
                 contacts.append(newContact)
             }
         }
         return contacts
+    }
+}
+
+// MARK: - Equatable
+extension Contact: Equatable {
+    static func == (lhs: Contact, rhs: Contact) -> Bool {
+        return lhs.name == rhs.name &&
+            lhs.surname == rhs.surname &&
+            lhs.phone == rhs.phone &&
+            lhs.email == rhs.email
     }
 }
