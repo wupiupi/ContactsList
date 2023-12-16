@@ -1,5 +1,5 @@
 //
-//  Person.swift
+//  Contact.swift
 //  ContactsList
 //
 //  Created by Paul Makey on 16.12.23.
@@ -16,7 +16,7 @@ struct Contact {
         let dataStore = DataStore()
         var contacts: [Contact] = []
         
-        while contacts.count < 10 {
+        while contacts.count < 15 {
             
             let name = dataStore.names.randomElement() ?? ""
             let surname = dataStore.surnames.randomElement() ?? ""
@@ -30,8 +30,6 @@ struct Contact {
                 email: email
             )
             
-            // Почему не работает корректно? =(
-            // Не могу понять...
             if !contacts.contains(newContact) {
                 contacts.append(newContact)
             }
@@ -43,9 +41,9 @@ struct Contact {
 // MARK: - Equatable
 extension Contact: Equatable {
     static func == (lhs: Contact, rhs: Contact) -> Bool {
-        return lhs.name == rhs.name &&
-            lhs.surname == rhs.surname &&
-            lhs.phone == rhs.phone &&
+        return lhs.name == rhs.name ||
+            lhs.surname == rhs.surname ||
+            lhs.phone == rhs.phone ||
             lhs.email == rhs.email
     }
 }
