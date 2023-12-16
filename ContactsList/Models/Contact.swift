@@ -16,7 +16,7 @@ struct Contact {
         let dataStore = DataStore()
         var contacts: [Contact] = []
         
-        while contacts.count < 15 {
+        while contacts.count < 15 { // Можно не хардкодить, а взять, например, dataStore.names.count
             
             let name = dataStore.names.randomElement() ?? ""
             let surname = dataStore.surnames.randomElement() ?? ""
