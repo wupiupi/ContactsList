@@ -21,7 +21,8 @@ final class DataStore {
         "Adolf",
         "Kenny",
         "Tobey",
-        "Arak"
+        "Arak",
+        "Konstantin"
     ]
     
     let surnames = [
@@ -37,7 +38,9 @@ final class DataStore {
         "Stalin",
         "Sky-Walker",
         "Thano",
-        "Arduino"
+        "Arduino",
+        "Babitskiy",
+        "Makey"
     ]
     
     let phoneNumbers = [
@@ -54,7 +57,8 @@ final class DataStore {
         "+375(25)106-16-10",
         "+375(25)134-23-56",
         "+375(25)173-23-14",
-        "+375(25)121-12-32"
+        "+375(25)121-12-32",
+        "+375(25)163-26-17"
     ]
     
     let emails = [
@@ -69,6 +73,10 @@ final class DataStore {
         "megadeth@protonmail.com",
         "helloworld@protonmail.com",
         "slayerfan@protonmail.com",
-        "instabeauty@protonmail.com"
+        "instabeauty@protonmail.com",
+        "bsuirFan@yahoo.com",
+        "swiftbook@yahoo.com",
+        "agagagagaga@yahoo.com",
+        
     ]
 }
