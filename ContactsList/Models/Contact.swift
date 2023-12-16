@@ -11,33 +11,28 @@ struct Contact: Equatable {
     let phone: String
     let email: String
     
-    static func getPersons() -> [Contact] {
+    static func getContacts() -> [Contact] {
         let dataStore = DataStore()
-        var persons: [Contact] = []
+        var contacts: [Contact] = []
         
-        while persons.count < 10 {
-            
-            // Алексей, здравствуйте =) Я помню, что вы показывали способ, как можно
-            // избежать "пирамиды погибели", исходя от обратного. Я пытался найти,
-            // но не смог. Но на месячных каникулах планирую пересмотреть все уроки
-            // начиная с первого модуля и законспектировать их! :)
+        while contacts.count < 10 {
             
             let name = dataStore.names.randomElement() ?? "No_name"
             let surname = dataStore.surnames.randomElement() ?? "No_surname"
             let email = dataStore.emails.randomElement() ?? "No_email"
             let phone = dataStore.phoneNumbers.randomElement() ?? "No_phone"
             
-            let newPerson = Contact(
+            let newContact = Contact(
                 name: name,
                 surname: surname,
                 phone: phone,
                 email: email
             )
             
-            if !persons.contains(where: { $0 == newPerson }) {
-                persons.append(newPerson)
+            if !contacts.contains(where: { $0 == newContact }) {
+                contacts.append(newContact)
             }
         }
-        return persons
+        return contacts
     }
 }
